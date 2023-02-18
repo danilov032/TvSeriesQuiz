@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/franchisesFragment">
+
+    <fragment
+        android:id="@+id/franchisesFragment"
+        android:name="com.example.tvseriesquiz.franchise.presentation.FranchisesFragment"
+        android:label="FranchisesFragment" >
+        <action
+            android:id="@+id/action_franchisesFragment_to_currentFranchiseFragment"
+            app:destination="@id/currentFranchiseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/currentFranchiseFragment"
+        android:name="com.example.tvseriesquiz.current_franchise.presentation.CurrentFranchiseFragment"
+        android:label="CurrentFranchiseFragment" />
+</navigation>

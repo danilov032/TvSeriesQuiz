@@ -1,5 +1,6 @@
 package com.example.tvseriesquiz.di.modules
 
+import com.example.tvseriesquiz.franchise.presentation.FranchisesPresenter
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -14,5 +15,10 @@ class AppModule {
         return OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
             .build()
+    }
+
+    @Provides
+    fun provideHistoryPresenter (): FranchisesPresenter {
+        return FranchisesPresenter()
     }
 }

@@ -1,7 +1,7 @@
 package com.example.tvseriesquiz.di.components
 
 import android.content.Context
-import com.example.tvseriesquiz.di.TvSeriesQuizApp
+import com.example.tvseriesquiz.TvSeriesQuizApp
 import com.example.tvseriesquiz.di.modules.ActivityModule
 import com.example.tvseriesquiz.di.modules.AppModule
 import com.example.tvseriesquiz.di.modules.FragmentModule

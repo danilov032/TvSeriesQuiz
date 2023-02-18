@@ -1,4 +1,4 @@
-package com.example.tvseriesquiz.di
+package com.example.tvseriesquiz
 
 import android.app.Application
 import com.example.tvseriesquiz.di.components.DaggerAppComponent

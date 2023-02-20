@@ -14,8 +14,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField 'String', 'FIRST_HOST', '"https://5e510330f2c0d300147c034c.mockapi.io/"'
-        buildConfigField 'String', 'SECOND_HOST', '"https://api.thecatapi.com"'
+        buildConfigField 'String', 'FIRST_HOST', '"https://testbuilder.host/api/"'
     }
 
     buildTypes {
@@ -121,13 +120,6 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
 
     //Moxy MVP solution
-//    kapt "com.github.moxy-community:moxy-compiler:2.0.2"
-//    implementation "com.github.moxy-community:moxy:2.0.2"
-//    implementation "com.github.moxy-community:moxy-androidx:2.0.2"
-//    implementation "com.github.moxy-community:moxy-material:2.1.2"
-//
-//    implementation "com.github.moxy-community:moxy-ktx:2.1.2"
-
     implementation "com.github.moxy-community:moxy-androidx:2.0.2"
     implementation "com.github.moxy-community:moxy-material:2.1.2"
     kapt "com.github.moxy-community:moxy-compiler:2.1.2"

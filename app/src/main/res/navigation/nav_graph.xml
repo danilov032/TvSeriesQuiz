@@ -15,5 +15,9 @@
     <fragment
         android:id="@+id/currentFranchiseFragment"
         android:name="com.example.tvseriesquiz.current_franchise.presentation.CurrentFranchiseFragment"
-        android:label="CurrentFranchiseFragment" />
+        android:label="CurrentFranchiseFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
 </navigation>

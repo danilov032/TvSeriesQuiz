@@ -18,7 +18,7 @@
             android:label="@string/title_activity_base"
             android:theme="@style/Theme.TvSeriesQuiz" />
         <activity
-            android:name="com.example.tvseriesquiz.MainActivity"
+            android:name="com.example.tvseriesquiz.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

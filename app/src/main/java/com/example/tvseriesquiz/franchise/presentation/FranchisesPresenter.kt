@@ -1,7 +1,6 @@
 package com.example.tvseriesquiz.franchise.presentation
 
 import com.example.tvseriesquiz.franchise.data.repositories.FranchiseRepository
-import com.example.tvseriesquiz.franchise.data.services.ApiService
 import com.example.tvseriesquiz.franchise.domain.Franchise
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -35,7 +34,7 @@ class FranchisesPresenter @Inject constructor(private val franchiseRepository: F
     }
 
     fun onClickFranchise(franchise: Franchise) {
-        viewState.openCurrentFranchise(franchise.id)
+        viewState.openCurrentFranchise(franchise.id, franchise.title)
     }
 
     override fun onDestroy() {

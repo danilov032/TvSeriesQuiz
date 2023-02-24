@@ -12,7 +12,7 @@ import dagger.android.AndroidInjectionModule
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [AppModule::class, AndroidInjectionModule::class, ActivityModule::class, FragmentModule::class])
+@Component(modules = [AndroidInjectionModule::class, ActivityModule::class, FragmentModule::class, AppModule::class])
 interface AppComponent: AndroidInjector<TvSeriesQuizApp> {
 
     override fun inject(instance: TvSeriesQuizApp)

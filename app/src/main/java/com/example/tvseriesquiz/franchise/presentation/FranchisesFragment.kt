@@ -2,6 +2,8 @@ package com.example.tvseriesquiz.franchise.presentation
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tvseriesquiz.BaseFragment
@@ -31,6 +33,8 @@ class FranchisesFragment: BaseFragment<FragmentFranchiseBinding>(), FranchisesVi
             layoutManager = LinearLayoutManager(requireContext())
             adapter = franchiseAdapter
         }
+        setHasOptionsMenu(true)
+        (activity as? AppCompatActivity)?.supportActionBar?.title = getString(R.string.app_name)
 
         super.onViewCreated(view, savedInstanceState)
     }
@@ -39,7 +43,8 @@ class FranchisesFragment: BaseFragment<FragmentFranchiseBinding>(), FranchisesVi
         franchiseAdapter.updateItems(listFranchises)
     }
 
-    override fun openCurrentFranchise(id: String) {
-        binding.root.findNavController().navigate(R.id.currentFranchiseFragment)
+    override fun openCurrentFranchise(id: String, name: String) {
+        val bundle = bundleOf("id" to id, "name" to name)
+        binding.root.findNavController().navigate(R.id.currentFranchiseFragment, bundle)
     }
 }

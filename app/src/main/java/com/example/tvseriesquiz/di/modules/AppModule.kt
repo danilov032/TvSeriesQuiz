@@ -1,19 +1,22 @@
 package com.example.tvseriesquiz.di.modules
 
+import android.os.Bundle
 import androidx.annotation.NonNull
 import com.example.tvseriesquiz.BuildConfig
+import com.example.tvseriesquiz.current_franchise.presentation.CurrentFranchiseFragment
 import com.example.tvseriesquiz.current_franchise.presentation.CurrentFranchisePresenter
-import com.example.tvseriesquiz.franchise.data.api_modeles.FranchiseResponse
 import com.example.tvseriesquiz.franchise.data.repositories.FranchiseRepository
 import com.example.tvseriesquiz.franchise.data.services.ApiService
+import com.example.tvseriesquiz.franchise.presentation.FranchisesFragment
 import com.example.tvseriesquiz.franchise.presentation.FranchisesPresenter
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
 import javax.inject.Singleton
 
 @Module
@@ -50,7 +53,12 @@ class AppModule {
     }
 
     @Provides
-    fun provideCurrentFranchisePresenter(): CurrentFranchisePresenter {
+    fun provideBundle(fragment: CurrentFranchiseFragment): Bundle? {
+        return fragment.arguments
+    }
+
+    @Provides
+    fun provideCurrentFranchisePresenter (): CurrentFranchisePresenter {
         return CurrentFranchisePresenter()
     }
 }

@@ -6,6 +6,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ApiService {
-    @GET("franchise/getAll")
+    @GET("franchise/all")
     fun getListFranchises(@Query("location") location: String = "en"): Single<FranchiseResponse>
 }

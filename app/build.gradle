@@ -15,6 +15,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField 'String', 'FIRST_HOST', '"https://testbuilder.host/api/"'
+        buildConfigField 'String', 'IMAGE_HOST', '"https://testbuilder.host"'
     }
 
     buildTypes {

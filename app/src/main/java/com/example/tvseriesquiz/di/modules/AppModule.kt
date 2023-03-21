@@ -1,14 +1,17 @@
 package com.example.tvseriesquiz.di.modules
 
+import android.content.Context
 import android.os.Bundle
 import androidx.annotation.NonNull
 import com.example.tvseriesquiz.BuildConfig
+import com.example.tvseriesquiz.current_franchise.data.repositories.CurrentFranchiseRepository
 import com.example.tvseriesquiz.current_franchise.presentation.CurrentFranchiseFragment
 import com.example.tvseriesquiz.current_franchise.presentation.CurrentFranchisePresenter
 import com.example.tvseriesquiz.franchise.data.repositories.FranchiseRepository
 import com.example.tvseriesquiz.franchise.data.services.ApiService
-import com.example.tvseriesquiz.franchise.presentation.FranchisesFragment
 import com.example.tvseriesquiz.franchise.presentation.FranchisesPresenter
+import com.example.tvseriesquiz.test_parrent.presentation.TestParentPresenter
+import com.example.tvseriesquiz.test_parrent.data.repositories.TestParentRepository
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -16,7 +19,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import javax.inject.Inject
 import javax.inject.Singleton
 
 @Module
@@ -48,6 +50,11 @@ class AppModule {
     }
 
     @Provides
+    fun provideCurrentFranchiseRepository(apiService: ApiService): CurrentFranchiseRepository {
+        return CurrentFranchiseRepository(apiService)
+    }
+
+    @Provides
     fun provideFranchisesPresenter(franchiseRepository: FranchiseRepository): FranchisesPresenter {
         return FranchisesPresenter(franchiseRepository)
     }
@@ -58,7 +65,20 @@ class AppModule {
     }
 
     @Provides
-    fun provideCurrentFranchisePresenter (): CurrentFranchisePresenter {
-        return CurrentFranchisePresenter()
+    fun provideCurrentFranchisePresenter(currentFranchiseRepository: CurrentFranchiseRepository): CurrentFranchisePresenter {
+        return CurrentFranchisePresenter(currentFranchiseRepository)
+    }
+
+    @Provides
+    fun provideTestParentPresenter(testParentRepository: TestParentRepository): TestParentPresenter {
+        return TestParentPresenter(testParentRepository)
+    }
+
+    @Provides
+    fun provideTestParentRepository(
+        apiService: ApiService,
+        context: Context,
+    ): TestParentRepository {
+        return TestParentRepository(apiService, context)
     }
 }

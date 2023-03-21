@@ -3,13 +3,13 @@ package com.example.tvseriesquiz.current_franchise.presentation.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tvseriesquiz.current_franchise.domain.Test
+import com.example.tvseriesquiz.current_franchise.domain.TestFromList
 import com.example.tvseriesquiz.current_franchise.presentation.holders.TestViewHolder
 import com.example.tvseriesquiz.databinding.TestListItemBinding
 
-class TestAdapter (private val clickItemListener: (Test) -> Unit): RecyclerView.Adapter<TestViewHolder>() {
+class TestAdapter (private val clickItemListener: (TestFromList) -> Unit): RecyclerView.Adapter<TestViewHolder>() {
 
-    private val items: MutableList<Test> = mutableListOf()
+    private val items: MutableList<TestFromList> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TestViewHolder {
         val itemBinding = TestListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -24,7 +24,7 @@ class TestAdapter (private val clickItemListener: (Test) -> Unit): RecyclerView.
         return items.size
     }
 
-    fun updateItems(list: List<Test>){
+    fun updateItems(list: List<TestFromList>){
         items.clear()
         items.addAll(list)
         notifyDataSetChanged()

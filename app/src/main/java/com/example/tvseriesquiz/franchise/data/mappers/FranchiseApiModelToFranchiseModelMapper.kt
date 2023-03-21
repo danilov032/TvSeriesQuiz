@@ -6,5 +6,7 @@ import com.example.tvseriesquiz.franchise.domain.Franchise
 fun FranchiseResponse.Value.toFranchiseModel(): Franchise =
     Franchise(
         this.id ?: "",
-        this.title ?: ""
+        this.title ?: "",
+        this.imageUrl ?: "",
+        this.feature ?: false
     )

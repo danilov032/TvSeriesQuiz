@@ -11,6 +11,12 @@ class FranchiseResponse: BaseResponse<List<FranchiseResponse.Value>>() {
         val id: String? = null,
         @SerializedName("title")
         @Expose
-        val title: String? = null
+        val title: String? = null,
+        @SerializedName("imageUrl")
+        @Expose
+        val imageUrl: String? = null,
+        @SerializedName("feature")
+        @Expose
+        val feature: Boolean? = false
     )
 }

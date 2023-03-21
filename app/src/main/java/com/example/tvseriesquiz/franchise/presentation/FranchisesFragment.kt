@@ -1,6 +1,9 @@
 package com.example.tvseriesquiz.franchise.presentation
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
@@ -34,8 +37,7 @@ class FranchisesFragment: BaseFragment<FragmentFranchiseBinding>(), FranchisesVi
             adapter = franchiseAdapter
         }
         setHasOptionsMenu(true)
-        (activity as? AppCompatActivity)?.supportActionBar?.title = getString(R.string.app_name)
-
+        (activity as? AppCompatActivity)?.supportActionBar?.title = "Франшизы"
         super.onViewCreated(view, savedInstanceState)
     }
 
@@ -47,4 +49,17 @@ class FranchisesFragment: BaseFragment<FragmentFranchiseBinding>(), FranchisesVi
         val bundle = bundleOf("id" to id, "name" to name)
         binding.root.findNavController().navigate(R.id.currentFranchiseFragment, bundle)
     }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.settings_btn, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.action_settings) {
+            binding.root.findNavController().navigate(R.id.settingsFragment)
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }

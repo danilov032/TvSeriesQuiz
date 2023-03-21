@@ -1,0 +1,164 @@
+[
+  {
+    "question": {
+      "text": "Кого нет на фото?",
+      "imageUrl": "https://phonoteka.org/uploads/posts/2021-07/1625626407_8-phonoteka-org-p-garri-potter-fan-art-krasivo-9.jpg"
+    },
+    "inputField": {
+      "type": "SINGLE_TEXT",
+      "variants": [
+        {
+          "id": 1,
+          "content": "Гарри Поттера"
+        },
+        {
+          "id": 2,
+          "content": "Сириуса Блэка"
+        },
+        {
+          "id": 3,
+          "content": "Гермионы"
+        },
+        {
+          "id": 4,
+          "content": "Рона Уизли"
+        }
+      ],
+      "answer": 2
+    }
+  },
+  {
+    "question": {
+      "text": "Выберите дом Рона Уизли?",
+      "imageUrl": "https:\\image.png"
+    },
+    "inputField": {
+      "type": "SINGLE_IMAGE",
+      "variants": [
+        {
+          "id": 1,
+          "content": "https://www.hp-lexicon.org/wp-content/uploads/2018/09/hp2-chapter-3.jpg"
+        },
+        {
+          "id": 2,
+          "content": "Ответ 2"
+        },
+        {
+          "id": 3,
+          "content": "Ответ 3"
+        },
+        {
+          "id": 4,
+          "content": "Ответ 4"
+        }
+      ],
+      "answer": 3
+    }
+  },
+  {
+    "question": {
+      "text": "3Вопрос вопрос вопрос ?",
+      "imageUrl": "https:\\image.png"
+    },
+    "inputField": {
+      "type": "NUMERIC",
+      "variantsArray": [10 ,11 ,12 ,13],
+      "answer": 3
+    }
+  },
+  {
+    "question": {
+      "text": "4Вопрос вопрос вопрос ?",
+      "imageUrl": "https:\\image.png"
+    },
+    "inputField": {
+      "type": "LETTERS",
+      "variantsArray": ["Ж" ,"О" ,"П" ,"А"],
+      "answer": "С"
+    }
+  },
+  {
+    "question": {
+      "text": "5Вопрос вопрос вопрос ?",
+      "imageUrl": "https:\\image.png"
+    },
+    "inputField": {
+      "type": "MULTI_TEXT",
+      "variants": [
+        {
+          "id": 1,
+          "content": "Ответ 1"
+        },
+        {
+          "id": 2,
+          "content": "Ответ 2"
+        },
+        {
+          "id": 3,
+          "content": "Ответ 3"
+        },
+        {
+          "id": 4,
+          "content": "Ответ 4"
+        }
+      ],
+      "answer": [3, 1, 2, 4]
+    }
+  },
+  {
+    "question": {
+      "text": "6Вопрос вопрос вопрос ?",
+      "imageUrl": "https:\\image.png"
+    },
+    "inputField": {
+      "type": "CORRECT_ORDER_TEXT",
+      "variants": [
+        {
+          "id": 1,
+          "content": "Ответ 1"
+        },
+        {
+          "id": 2,
+          "content": "Ответ 2"
+        },
+        {
+          "id": 3,
+          "content": "Ответ 3"
+        },
+        {
+          "id": 4,
+          "content": "Ответ 4"
+        }
+      ],
+      "answer": [3, 1, 2, 4]
+    }
+  },
+  {
+    "question": {
+      "text": "7Вопрос вопрос вопрос ?",
+      "imageUrl": "https:\\image.png"
+    },
+    "inputField": {
+      "type": "CORRECT_ORDER_IMAGE",
+      "variants": [
+        {
+          "id": 1,
+          "content": "Ответ 1"
+        },
+        {
+          "id": 2,
+          "content": "Ответ 2"
+        },
+        {
+          "id": 3,
+          "content": "Ответ 3"
+        },
+        {
+          "id": 4,
+          "content": "Ответ 4"
+        }
+      ],
+      "answer": [3, 1, 2, 4]
+    }
+  }
+]

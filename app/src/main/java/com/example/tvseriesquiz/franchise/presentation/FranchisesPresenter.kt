@@ -25,8 +25,9 @@ class FranchisesPresenter @Inject constructor(private val franchiseRepository: F
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe (
-                {
-                    viewState.updateFranchises(it)
+                { franchises ->
+                    val sortFranchises = franchises.filter { it.feature }
+                    viewState.updateFranchises(sortFranchises)
                 }, {
                     val t = it
                 }

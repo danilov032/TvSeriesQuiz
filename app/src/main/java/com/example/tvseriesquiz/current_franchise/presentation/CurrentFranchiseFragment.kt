@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tvseriesquiz.BaseFragment
 import com.example.tvseriesquiz.R
 import com.example.tvseriesquiz.current_franchise.domain.Achievement
-import com.example.tvseriesquiz.current_franchise.domain.Test
+import com.example.tvseriesquiz.current_franchise.domain.TestFromList
 import com.example.tvseriesquiz.current_franchise.presentation.adapters.AchievementAdapter
 import com.example.tvseriesquiz.current_franchise.presentation.adapters.TestAdapter
 import com.example.tvseriesquiz.databinding.FragmentCurrentFranchiseBinding
@@ -39,19 +39,21 @@ class CurrentFranchiseFragment : BaseFragment<FragmentCurrentFranchiseBinding>()
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL,false)
             adapter = achievementAdapter
         }
-        arguments?.getString("id")
+
+        presenter.loadTests(arguments?.getString("id") ?: "")
         super.onViewCreated(view, savedInstanceState)
     }
 
     private fun initToolbar() {
+        (activity as AppCompatActivity).supportActionBar?.show()
         val nameFranchise = arguments?.getString("name")
         (activity as? AppCompatActivity)?.supportActionBar?.title = nameFranchise
-        setHasOptionsMenu(true)
+//        setHasOptionsMenu(true)
     }
 
     override fun getViewBinding(): FragmentCurrentFranchiseBinding = FragmentCurrentFranchiseBinding.inflate(layoutInflater)
 
-    override fun updateFranchises(tests: List<Test>) {
+    override fun updateFranchises(tests: List<TestFromList>) {
         testAdapter.updateItems(tests)
     }
 

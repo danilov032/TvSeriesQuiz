@@ -31,7 +31,36 @@
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/startTestFragment"
-        android:name="start_test.presentation.StartTestFragment"
+        android:name="com.example.tvseriesquiz.start_test.presentation.StartTestFragment"
         android:label="fragment_start_test"
-        tools:layout="@layout/fragment_start_test" />
+        tools:layout="@layout/fragment_start_test" >
+        <action
+            android:id="@+id/action_startTestFragment_to_testParentFragment"
+            app:destination="@id/testParentFragment"
+            app:popUpTo="@+id/testParentFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/testFragment"
+        android:name="com.example.tvseriesquiz.test.presentation.TestFragment"
+        android:label="TestFragment" />
+    <fragment
+        android:id="@+id/testParentFragment"
+        android:name="com.example.tvseriesquiz.test_parrent.presentation.TestParentFragment"
+        android:label="fragment_test_parent"
+        tools:layout="@layout/fragment_test_parent" >
+        <action
+            android:id="@+id/action_testParentFragment_to_testFragment"
+            app:destination="@id/testFragment"
+            app:popUpTo="@+id/testFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_testParentFragment_to_finishTestFragment"
+            app:destination="@id/finishTestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finishTestFragment"
+        android:name="com.example.tvseriesquiz.finish_test.FinishTestFragment"
+        android:label="fragment_finish_test"
+        tools:layout="@layout/fragment_finish_test" />
 </navigation>
